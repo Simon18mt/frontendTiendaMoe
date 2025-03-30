@@ -17,6 +17,8 @@ export class ProductosComponent implements OnInit {
    /* mesnaje para gitHub */
    /*  */
    /* oTRO para gitHub */
+   /*  */
+   /* UNO MAS Y YA  */
   
 
   idCarrito: string = '';
