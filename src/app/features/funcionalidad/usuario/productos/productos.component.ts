@@ -14,6 +14,9 @@ import Swal from 'sweetalert2';
 })
 export class ProductosComponent implements OnInit {
 
+   /* mesnaje para gitHub */
+  
+
   idCarrito: string = '';
   idUser: string = '';
   productosCarritoListos: productoData[] = [];
