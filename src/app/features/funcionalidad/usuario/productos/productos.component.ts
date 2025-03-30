@@ -14,12 +14,6 @@ import Swal from 'sweetalert2';
 })
 export class ProductosComponent implements OnInit {
 
- /* 
- 
- PARA PROBAR EL COMMIT
- 
- 
- */
   
 
   idCarrito: string = '';
