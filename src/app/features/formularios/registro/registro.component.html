@@ -1,0 +1,92 @@
+<div class="contenedor-formulario">
+    <form [formGroup]="myForm" class="formulario">
+      <h2>Formulario de Registro</h2>
+  
+      <!-- Campo Nombre -->
+      <div class="form-group">
+        <label for="username" class="form-label">Nombre:</label>
+        <input
+          id="username"
+          formControlName="username"
+          type="text"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            myForm.get('username')?.invalid && myForm.get('username')?.touched
+          "
+          class="error-message"
+        >
+          <small *ngIf="myForm.get('username')?.errors?.['required']">
+            El nombre es requerido.
+          </small>
+        </div>
+      </div>
+  
+      <!-- Campo Correo Electrónico -->
+      <div class="form-group">
+        <label for="email" class="form-label">Correo Electrónico:</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          class="form-input"
+        />
+        <div
+          *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"
+          class="error-message"
+        >
+          <small *ngIf="myForm.get('email')?.errors?.['required']">
+            El correo es requerido.
+          </small>
+          <small *ngIf="myForm.get('email')?.errors?.['email']">
+            El formato del correo no es válido.
+          </small>
+        </div>
+      </div>
+  
+      <!-- Campo Contraseña -->
+      <div class="form-group">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            myForm.get('password')?.invalid && myForm.get('password')?.touched
+          "
+          class="error-message"
+        >
+          <small *ngIf="myForm.get('password')?.errors?.['required']">
+            La contraseña es requerida.
+          </small>
+          <small *ngIf="myForm.get('password')?.errors?.['edadInvalida']">
+            La contraseña es incorrecta
+          </small>
+        </div>
+      </div>
+
+          <!-- Nuevo Selector para Tipo de Registro -->
+    <div class="form-group">
+      <label for="userType" class="form-label">Registrarse como:</label>
+      <select id="userType" formControlName="userType" class="form-select">
+        <option value="usuario">Usuario</option>
+        <option value="admin">Administrador</option>
+      </select>
+    </div>
+      
+  
+      <div class="contenedor-botones">
+  
+        <button (click)="enviarFormulario()" class="btn" type="button">
+          Enviar
+        </button>
+        <button routerLink="" type="button" class="btn">Volver</button>
+       
+      </div>
+    </form>
+  </div>
+  

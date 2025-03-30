@@ -1,0 +1,94 @@
+<div class="contenedor">
+    <h1 class="titulo">Editar productos</h1>
+
+    <div class="cuadro-busqueda">
+        <ul class="lista-resultados">
+            <li *ngFor="let producto of productosListos" class="producto-item">
+                <span class="producto-nombre">{{ producto.username }}</span>
+                <span class="producto-precio">${{ producto.precio }}</span>
+                <span class="producto-cantidad">Cantidad: {{ producto.cantidad }}</span>
+                <button data-bs-toggle="modal" data-bs-target="#miModal"
+                (click)="seleccionarProducto(producto)"class="boton-editar" >Editar</button>
+            </li>
+ 
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- MODAL -->
+<div class="modal fade" id="miModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="myForm" class="formulario">
+                    <h2>Editar Información</h2>
+
+                    <!-- Contenedor para organizar los tres campos en una fila -->
+                    <div class="form-row">
+                        <!-- Campo Nombre -->
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input
+                                id="nombre"
+                                formControlName="nombre"
+                                type="text"
+                                class="form-input"
+                            />
+                            <div *ngIf="myForm.get('nombre')?.invalid && myForm.get('nombre')?.touched" class="error-message">
+                                <small *ngIf="myForm.get('nombre')?.errors?.['required']">
+                                    El nombre es requerido.
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Campo Precio -->
+                        <div class="form-group">
+                            <label for="precio" class="form-label">Precio:</label>
+                            <input
+                                id="precio"
+                                formControlName="precio"
+                                type="number"
+                                class="form-input"
+                            />
+                            <div *ngIf="myForm.get('precio')?.invalid && myForm.get('precio')?.touched" class="error-message">
+                                <small *ngIf="myForm.get('precio')?.errors?.['required']">
+                                    El precio es requerido.
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Campo Cantidad -->
+                        <div class="form-group">
+                            <label for="cantidad" class="form-label">Cantidad:</label>
+                            <input
+                                id="cantidad"
+                                formControlName="cantidad"
+                                type="number"
+                                class="form-input"
+                            />
+                            <div *ngIf="myForm.get('cantidad')?.invalid && myForm.get('cantidad')?.touched" class="error-message">
+                                <small *ngIf="myForm.get('cantidad')?.errors?.['required']">
+                                    La cantidad es requerida.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button (click)="editarProducto()" type="button" class="boton-guardar" data-bs-dismiss="modal">Guardar datos</button>
+            </div>
+        </div>
+    </div> (
+</div>
+

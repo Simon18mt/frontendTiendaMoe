@@ -1,0 +1,134 @@
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80vh;
+    width: 60vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Título */
+.titulo {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    color: #4b4b55;
+    margin-bottom: 20px;
+}
+
+/* Cuadro de búsqueda */
+.cuadro-busqueda {
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Barra y botón */
+.barra-con-boton {
+    display: flex;
+    gap: 10px;
+}
+
+ 
+
+/* Botón Agregar */
+.barra-con-boton {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 10px;
+}
+
+.boton-buscar {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4b4b55;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto de salto al pasar el mouse */
+.boton-buscar:hover {
+    background-color: #328034;
+    transform: translateY(-5px); /* Hace que el botón "salte" */
+}
+
+/* Efecto de clic */
+.boton-buscar:active {
+    transform: translateY(0px); /* Vuelve a su posición original */
+}
+
+/* Lista de productos */
+
+.lista-resultados {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%; /* Hace que la lista ocupe todo el ancho del contenedor */
+}
+
+.producto-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #aba7a7;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 5px solid #4caf50;
+    width: 93.5%; /* Ahora ocupa todo el ancho de la lista */
+    max-width: none; /* Elimina el límite de ancho */
+    margin: 5px;
+}
+
+.producto-nombre, .producto-precio, .producto-cantidad {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.producto-nombre {
+    flex: 2;
+}
+
+.producto-precio, .producto-cantidad {
+    flex: 1;
+    text-align: center;
+}
+
+/* Botón de eliminar */
+.boton-eliminar {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton-eliminar:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+.boton-eliminar:active {
+    transform: scale(0.9);
+}

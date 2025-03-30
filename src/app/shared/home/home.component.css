@@ -1,0 +1,113 @@
+/* Estilos generales */
+.contenedor-principal {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+ 
+    color: #333;
+
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background: url('/assets/images/licor.jpg');   
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+    background-size: cover; /* Hace que la imagen cubra toda el área */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; 
+  }
+
+  .perfil-imagen {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover; /* Recorta la imagen para que se ajuste sin deformarse */
+  }
+
+  
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #444;
+    color: white;
+    padding: 15px 30px;
+  }
+
+  
+  
+  .logo {
+    font-size: 32px; /* Aumentar el tamaño */
+  font-weight: 700; /* Usar negrita */
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase; /* Convertir en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  color: #f4a261; /* Un color llamativo */
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #a0c4ff;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Separación entre los cuadros */
+    height: 70vh;
+  }
+  
+  /* Tarjetas de login y registro */
+  .card {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+  }
+  
+  /* Títulos */
+  h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  /* Botones */
+  .btn {
+    background: #5a7d9a;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #3f5c77;
+  }
+ 

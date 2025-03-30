@@ -1,0 +1,39 @@
+<div class="contenedorPrincipal">
+    <!-- Contenedor de Perfil y Menú Lateral -->
+    <div class="menuYPerfilContenedor">
+      <!-- Sección de Perfil (encima del menú) -->
+      <div class="perfil">
+        <h2>Usuario </h2>
+        <img
+          src="/assets/images/barney.png"
+          alt="Perfil"
+          class="perfil-imagen"
+        />
+        <img src="/src/assets/images/barney.png" alt="">
+        <div  class="perfil-info">
+          <h2>{{tokenListo.username}} </h2>
+          <h5>{{tokenListo.email}} </h5>
+          <!-- <h2>{{ tituloDelMenu.username }}</h2>
+          <h3>{{ tituloDelMenu.email }}</h3> --> 
+        </div>
+         
+      </div>
+  
+      <!-- Menú Lateral (debajo de la sección de perfil) -->
+      <div class="menuLateral">
+        <a routerLink="productos">Lista de productos</a>
+        <a routerLink="editarPerfil">Editar perfil</a>
+       
+        
+       
+        <!-- (click)="obtenerToken()" -->
+        <a (click)="borraToken()"  routerLink="">Cerrar sesión</a>
+      </div>
+    </div>
+  
+    <!-- Contenedor de contenido principal -->
+    <div class="contenido">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

@@ -1,0 +1,63 @@
+<div class="contenedor">
+    <h1 class="titulo">Carrito de compras</h1>
+    <button data-bs-toggle="modal" data-bs-target="#miModal" class="boton-carrito">CARRITO</button>
+
+    <div class="cuadro-busqueda">
+        <ul class="lista-resultados">
+            <li *ngFor="let producto of productosListos" class="producto-item">
+                <span class="producto-nombre">{{ producto.username }}</span>
+                <span class="producto-precio">${{ producto.precio }}</span>
+                <span class="producto-cantidad">Cantidad: {{ producto.cantidad }}</span>
+                <div>
+                    <button (click)="agregarProductoAlCarritoMensage(producto)" class="boton-sumar">Agregar</button>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="miModal" tabindex="-1">
+    <div class="modal-dialog modal-ancho">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tu carrito de compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="cuadro-busqueda-modal ">
+                    <ul class="lista-resultados">
+                        <li *ngFor="let carrito of productosCarritoListos" class="producto-item">
+                            <span class="producto-nombre">{{ carrito.username }}</span>
+                            <span class="producto-precio">Unidad: ${{ carrito.precio }}</span>
+                            <span class="producto-cantidad">Cantidad: {{ carrito.cantidad }}</span>
+                            <span class="producto-cantidad">Total: {{carrito.precio * carrito.cantidad}}</span>
+                      
+                            <div>
+                                <button  (click)="agregarProductoAlCarrito(carrito)" class="boton-sumar">+</button>
+                                <button (click)="restarProducto(carrito)" class="boton-restar">-</button>
+                                <button (click)="eliminarDelCarrito()" class="boton-restar">Eliminar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h5>Total de la compra: ${{ getTotalCarrito() }}</h5>
+                <div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Generar factura</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--  -->

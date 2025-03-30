@@ -1,0 +1,103 @@
+/* Estilo general para el contenedor principal */
+.contenedorPrincipal {
+  display: flex; /* Usamos Flexbox para colocar el menú a la izquierda y el contenido a la derecha */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background: url('/assets/images/wallpaperflare.com_wallpaper (5).jpg') no-repeat center center/cover; /* Imagen de fondo */
+  background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  
+}
+
+/* Contenedor de perfil y menú lateral */
+.menuYPerfilContenedor {
+  position: fixed; /* Fija ambos elementos (perfil y menú) en la parte izquierda */
+  top: 0;
+  left: 0;
+  width: 250px; /* Ancho del contenedor que incluye perfil y menú lateral */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos uno debajo del otro */
+  color: white;
+}
+
+/* Estilo para la sección de perfil */
+.perfil {
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Mismo color de fondo */
+  z-index: 200; /* Asegura que la sección de perfil esté por encima del menú lateral */
+}
+
+.perfil-imagen {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover; /* Recorta la imagen para que se ajuste sin deformarse */
+}
+
+ 
+
+.perfil-info h3, .perfil-info p {
+  margin: 5px 0;
+}
+
+/* Estilos para el menú lateral */
+.menuLateral {
+  flex-grow: 1; /* Hace que el menú ocupe el resto del espacio disponible */
+  padding-left: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column; /* Coloca los enlaces uno debajo del otro */
+}
+
+/* Estilos para los enlaces del menú */
+.menuLateral a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover sobre los enlaces */
+.menuLateral a:hover {
+  color: #f39c12; /* Cambia el color cuando el usuario pasa el ratón */
+}
+
+/* Contenedor principal del contenido */
+/* Contenedor principal del contenido */
+.contenido {
+  margin-left: 250px; /* Da espacio al menú de navegación (250px es el ancho del menú) */
+  padding: 20px;
+  width: calc(100% - 250px); /* Asegura que el contenido ocupe el espacio restante */
+  overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
+
+  /* Estilos añadidos para centrar el contenido */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;    /* Centrar verticalmente */
+  height: 100vh;          /* Asegura que ocupe toda la altura de la ventana */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho/alto */
+}
+
+/* Estilo para el formulario (contenedor) */
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;  /* Ancho más grande, puede ser el 90% del ancho de la pantalla */
+  max-width: 1200px; /* Tamaño máximo del formulario para que sea lo suficientemente amplio */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow-y: auto; /* Desplazamiento solo si es necesario */
+  
+}
+
+/* Estilos para el encabezado */
+h1 {
+  color: #6f4f37; /* Color marrón oscuro para el encabezado */
+  margin-bottom: 20px;
+}

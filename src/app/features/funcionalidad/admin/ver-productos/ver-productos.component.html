@@ -1,0 +1,14 @@
+<div class="contenedor">
+    <h1 class="titulo">Listado de productos</h1>
+
+    <div class="cuadro-busqueda">
+        <!-- Lista de productos dinámica -->
+        <ul class="lista-resultados">
+            <li *ngFor="let producto of productosListos" class="producto-item">
+                <span class="producto-nombre">{{ producto.username }}</span>
+                <span class="producto-precio">${{ producto.precio }}</span>
+                <span class="producto-cantidad">Cantidad: {{ producto.cantidad }}</span>
+            </li>
+        </ul>
+    </div>
+</div>

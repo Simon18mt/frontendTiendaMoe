@@ -1,0 +1,36 @@
+<div class="contenedorPrincipal">
+  <!-- Contenedor de Perfil y Menú Lateral -->
+  <div class="menuYPerfilContenedor">
+    <!-- Sección de Perfil (encima del menú) -->
+    <div class="perfil">
+      <h2>Administrador </h2>
+      <img
+        src="/assets/images/fotomoe.jpg"
+        alt="Perfil"
+        class="perfil-imagen"
+      />
+      
+      <div  class="perfil-info">
+        <h2>{{tokenListo.username}} </h2>
+        <h5>{{tokenListo.email}} </h5>
+        <!-- <h2>{{ tituloDelMenu.username }}</h2>
+        <h3>{{ tituloDelMenu.email }}</h3> --> 
+      </div>
+       
+    </div>
+
+    <!-- Menú Lateral (debajo de la sección de perfil) -->
+    <div class="menuLateral">
+      <a routerLink="agregar-eliminar">Agregar y eliminar</a>
+      <a routerLink="editar-eliminar">Editar productos</a>
+      <a routerLink="ver-productos">Ver productos</a>
+      <a (click)="cerrarSesion()" routerLink="">Cerrar sesión</a>
+
+    </div>
+  </div>
+
+  <!-- Contenedor de contenido principal -->
+  <div class="contenido">
+    <router-outlet></router-outlet>
+  </div>
+</div>
