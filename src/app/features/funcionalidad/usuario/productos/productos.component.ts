@@ -15,6 +15,8 @@ import Swal from 'sweetalert2';
 export class ProductosComponent implements OnInit {
 
    /* mesnaje para gitHub */
+   /*  */
+   /* oTRO para gitHub */
   
 
   idCarrito: string = '';
