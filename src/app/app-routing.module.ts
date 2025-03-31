@@ -5,7 +5,7 @@ import { HomeComponent } from './shared/home/home.component';
 import { IngresoComponent } from './features/formularios/ingreso/ingreso.component';
 import { PerfilAdminComponent } from './features/perfiles/perfil-admin/perfil-admin.component';
 import { PerfilUsuarioComponent } from './features/perfiles/perfil-usuario/perfil-usuario.component';
-import { EditarComponent } from './features/funcionalidad/admin/editar/editar.component';
+ 
 import { AgregarEliminarComponent } from './features/funcionalidad/admin/agregar-eliminar/agregar-eliminar.component';
 import { VerProductosComponent } from './features/funcionalidad/admin/ver-productos/ver-productos.component';
 import { ProductosComponent } from './features/funcionalidad/usuario/productos/productos.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'administrador',component:PerfilAdminComponent, 
     children:[
       {path:'agregar-eliminar',component:AgregarEliminarComponent},
-      {path:'editar-eliminar',component:EditarComponent},
+       
       {path:'ver-productos',component:VerProductosComponent}
   ]},
   /* PERFIL DEL USUARIO */
