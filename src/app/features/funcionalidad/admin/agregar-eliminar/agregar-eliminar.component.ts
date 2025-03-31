@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class AgregarEliminarComponent implements OnInit {
 
   myForm:FormGroup;
+  myFormEdit:FormGroup
 
   constructor(
     private productosService:ProductosService
@@ -32,13 +33,32 @@ export class AgregarEliminarComponent implements OnInit {
               Validators.required,
               this.noWhitespaceValidator,
             ]),
-    }) 
+    }),
+
+    this.myFormEdit = new FormGroup({
+      //NOMBRE DEL PRODUCTO
+                nombreEdit: new FormControl('', [
+                   Validators.required,
+                   this.noWhitespaceValidator,
+                 ]),
+                 // PRECIO DEL PRODUCTO (debe ser un número, sin `noWhitespaceValidator`)
+                 precio: new FormControl('', [
+                   Validators.required,
+                   Validators.min(0.01), // Para evitar precios negativos o 0
+                   ]),
+                 // CANTIDAD DEL PRODUCTO (debe ser un número, sin `noWhitespaceValidator`)
+                 cantidad: new FormControl('', [
+                   Validators.required,
+                   Validators.min(1), // Para evitar cantidades negativas o 0
+                 ]),
+   })
   }
 
   ngOnInit() {
     this.obtenerProductos();
   }
 
+  productoSeleccionado: any | null = null; // Producto que se va a editar
   productosListos: any[] = []; // Almacenar productos en un array
   obtenerProductos() {
     this.productosService.obtenerProductos().subscribe(
@@ -53,15 +73,19 @@ export class AgregarEliminarComponent implements OnInit {
   }
 
 
-    // Validador para comprobar que no haya espacios en blanco
-    private noWhitespaceValidator(
-      control: FormControl
-    ): { [key: string]: boolean } | null {
-      if (control.value && control.value.trim().length === 0) {
-        return { whitespace: true };
-      }
-      return null;
-    }
+// Validador para comprobar que no haya espacios en blanco
+private noWhitespaceValidator(
+  control: FormControl
+): { [key: string]: boolean } | null {
+  const value = control.value;
+
+  // Verificar que el valor sea un string antes de aplicar trim()
+  if (typeof value === 'string' && value.trim().length === 0) {
+    return { whitespace: true };
+  }
+
+  return null;
+}
 
     //AGREGAR PRODUCTOS
     agregarProducto(){
@@ -105,5 +129,48 @@ export class AgregarEliminarComponent implements OnInit {
         }
       )
     }
+
+
+
+
+        // ✅ Cargar datos en el modal al hacer clic en "Editar"
+        seleccionarProducto(producto: any) {
+          this.productoSeleccionado = producto;
+          this.myFormEdit.patchValue({
+            nombreEdit: producto.username, // Asegúrate de que "username" es el campo correcto
+            precio: producto.precio,
+            cantidad: producto.cantidad
+          });
+        }
+
+  // Editar productos
+  productoData: any[] = [];
+  idListo: any[] = [];
+  // ✅ Editar productos
+  editarProducto() {
+    if (this.myFormEdit.valid && this.productoSeleccionado) {
+      const datosActualizados = {
+        username: this.myFormEdit.value.nombreEdit,
+        precio: this.myFormEdit.value.precio,
+        cantidad: this.myFormEdit.value.cantidad
+      };
+
+      this.productosService.editarProducto(this.productoSeleccionado._id, datosActualizados).subscribe(
+        (response) => {
+      Swal.fire({
+        title: 'Actualizacion exitosa',
+        text: '¡Has guardado el producto correctamente!',
+        icon: 'success',
+        showConfirmButton: true,
+      }) 
+          this.obtenerProductos(); // Recargar lista de productos
+        },
+        (error) => {
+          console.log('Error al actualizar el producto:', error);
+          alert('Error al actualizar el producto');
+        }
+      );
+    }
+  }
 
 }

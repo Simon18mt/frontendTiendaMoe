@@ -1,129 +1,87 @@
-/* Estilo general para el contenedor del formulario */
+/* Contenedor general del formulario */
 .contenedor-formulario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    
-    background-color: #9b9b9b;
-    
-    padding: 0; /* Eliminar el padding que podría estar causando el desplazamiento */
-    margin: 0; /* Eliminar márgenes por defecto */
-    position: relative;
-    overflow: hidden; /* Evita el desplazamiento si el contenido se sale */
-    box-sizing: border-box; /* Asegura que los márgenes, bordes y el padding se incluyan en el ancho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Centrado en toda la pantalla */
+  background: url('/assets/images/licor.jpg') no-repeat center center;
+  background-size: cover;
+}
 
-    background: url('/assets/images/licor.jpg');   
-    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
-    background-size: cover; /* Hace que la imagen cubra toda el área */
-    background-position: center center; /* Centra la imagen */
-    background-repeat: no-repeat; 
-  }
-  
-  /* Estilo del formulario */
-  .formulario {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-    padding: 30px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px; /* Ajusta el tamaño máximo del formulario */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow-y: auto; /* Permite desplazamiento solo en caso de que el formulario sea demasiado grande */
-    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño del formulario */
-  }
-  
-  /* Estilo para el encabezado */
-  .formulario h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #4b4b55; /* Color marrón oscuro para el encabezado */
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo de los grupos de campos */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  /* Etiquetas */
-  .form-label {
-    display: block;
-    font-weight: bold;
-    color: #4b4b55; /* Color marrón oscuro */
-    margin-bottom: 5px;
-  }
-  
-  /* Estilo de los inputs */
-  .form-input {
-    width: 100%; /* Ocupa el 100% del ancho de su contenedor */
-    max-width: 100%; /* Asegura que no se desborden */
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #4b4b55; /* Bordes marrones */
-    border-radius: 4px;
-    background-color: #f7f1e1; /* Fondo marrón suave */
-    color: #4b4b55; /* Color del texto en el input */
-    transition: border-color 0.3s ease;
-    box-sizing: border-box; /* Asegura que padding y bordes se incluyan dentro del ancho */
-  }
-  
-  /* Efecto en el foco (cuando el input está seleccionado) */
-  .form-input:focus {
-    border-color: #4b4b55; /* Cambio de color del borde al enfocar el campo */
-    outline: none; /* Eliminar el borde predeterminado */
-    background-color: #fff; /* Fondo blanco cuando está en foco */
-  }
-  
-  /* Mensajes de error */
-  .error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
-  /* Estilo para los botones */
-  .contenedor-botones {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  /* Estilo de los botones */
-  .btn {
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 3px solid #4b4b55; /* Borde marrón oscuro */
-    border-radius: 30px;
-    background-color: #5b5b5f; /* Fondo marrón claro */
-    color: #fff; /* Texto blanco */
-    cursor: pointer;
-    transition: all 0.3s ease; /* Suaviza la transición */
-    text-align: center;
-    width: 48%; /* Hacer que los botones sean iguales de anchos */
-  }
-  
-  .btn:hover {
-    transform: translateY(-10px); /* Efecto de salto al pasar el ratón */
-    background-color: #4b4b55; /* Fondo marrón más oscuro */
-    color: #fff;
-    box-shadow: 0px 5px 15px #4b4b55; /* Sombra */
-  }
-  
-  .btn:active {
-    transform: translateY(0); /* Evitar el salto cuando se hace clic */
-    box-shadow: none;
-  }
-  
-  /* Estilo para el botón "Volver" */
-  .btn[type="button"] {
-    background-color: #f7f1e1; /* Fondo color claro para el botón "Volver" */
-    color: #4b4b55; /* Texto marrón oscuro */
-    border-color: #4b4b55; /* Borde marrón */
-  }
-  
-  .btn[type="button"]:hover {
-    background-color: #4b4b55; /* Fondo marrón oscuro al hacer hover */
-    color: #fff; /* Texto blanco */
-  }
-  
+/* Estilo del formulario */
+.formulario {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px; /* Ajusta el tamaño del formulario */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Centrar contenido */
+}
+
+/* Estilo de los campos del formulario */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Etiquetas */
+.form-label {
+  font-weight: bold;
+  color: #4b4b55;
+}
+
+/* Input */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #4b4b55;
+  border-radius: 4px;
+  background-color: #f7f1e1;
+  color: #4b4b55;
+}
+
+/* Contenedor de los botones */
+.contenedor-botones {
+  display: flex;
+  flex-direction: column; /* Asegura que los botones estén uno debajo del otro */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Botones */
+.btn-login {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #4b4b55;
+  border-radius: 30px;
+  background-color: #198b5c;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #115c3d;
+}
+
+
+
+/* Botones */
+.btn-registro {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #4b4b55;
+  border-radius: 30px;
+  background-color: #3677ac;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-registro:hover {
+  background-color: rgb(36, 36, 202);
+}

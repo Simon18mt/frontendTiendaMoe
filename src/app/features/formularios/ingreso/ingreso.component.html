@@ -1,63 +1,31 @@
 <div class="contenedor-formulario">
-    <form [formGroup]="myForm" class="formulario">
-      <h2>Formulario de ingreso</h2>
-  
-  
+  <form [formGroup]="myForm" class="formulario">
+       
+
       <!-- Campo Correo Electrónico -->
       <div class="form-group">
-        <label for="email" class="form-label">Correo Electrónico:</label>
-        <input
-          id="email"
-          formControlName="email"
-          type="email"
-          class="form-input"
-        />
-        <div
-          *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"
-          class="error-message"
-        >
-          <small *ngIf="myForm.get('email')?.errors?.['required']">
-            El correo es requerido.
-          </small>
-          <small *ngIf="myForm.get('email')?.errors?.['email']">
-            El formato del correo no es válido.
-          </small>
-        </div>
+          <label for="email" class="form-label">Correo Electrónico:</label>
+          <input id="email" formControlName="email" type="email" class="form-input" />
+          <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched" class="error-message">
+              <small *ngIf="myForm.get('email')?.errors?.['required']">El correo es requerido.</small>
+              <small *ngIf="myForm.get('email')?.errors?.['email']">El formato del correo no es válido.</small>
+          </div>
       </div>
-  
+
       <!-- Campo Contraseña -->
       <div class="form-group">
-        <label for="password" class="form-label">Contraseña:</label>
-        <input
-          id="password"
-          formControlName="password"
-          type="password"
-          class="form-input"
-        />
-        <div
-          *ngIf="
-            myForm.get('password')?.invalid && myForm.get('password')?.touched
-          "
-          class="error-message"
-        >
-          <small *ngIf="myForm.get('password')?.errors?.['required']">
-            La contraseña es requerida.
-          </small>
-          <small *ngIf="myForm.get('password')?.errors?.['edadInvalida']">
-            La contraseña es incorrecta
-          </small>
-        </div>
+          <label for="password" class="form-label">Contraseña:</label>
+          <input id="password" formControlName="password" type="password" class="form-input" />
+          <div *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched" class="error-message">
+              <small *ngIf="myForm.get('password')?.errors?.['required']">La contraseña es requerida.</small>
+              <small *ngIf="myForm.get('password')?.errors?.['edadInvalida']">La contraseña es incorrecta.</small>
+          </div>
       </div>
-  
+
+      <!-- Contenedor de botones -->
       <div class="contenedor-botones">
-        <!-- para que la validacion del formulario sea mas completa no 
-           usaremos [disabled] esto lo aremos para no bloquear el boto,
-           la idea es que reconozca que el formulario no esta lleno y muestre el mensaje -->
-        <button (click)="enviarFormulario()" class="btn" type="button">
-          Enviar
-        </button>
-        <button routerLink="" type="button" class="btn">Volver</button>
+          <button (click)="enviarFormulario()" class="btn-login" type="button">Iniciar sesion</button>
+          <button routerLink="registro" class="btn-registro">Crear una cuenta nueva</button>
       </div>
-    </form>
-  </div>
-  
+  </form>
+</div>

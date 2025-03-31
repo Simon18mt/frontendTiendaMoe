@@ -1,5 +1,7 @@
 <div class="contenedor">
     <h1 class="titulo">Editar productos</h1>
+    <button data-bs-toggle="modal" data-bs-target="#miModal"
+       class="boton-buscar">Agregar producto al sistema</button>
 
     <div class="cuadro-busqueda">
         <ul class="lista-resultados">
@@ -7,6 +9,8 @@
                 <span class="producto-nombre">{{ producto.username }}</span>
                 <span class="producto-precio">${{ producto.precio }}</span>
                 <span class="producto-cantidad">Cantidad: {{ producto.cantidad }}</span>
+                <button data-bs-toggle="modal" data-bs-target="#miModal"
+                (click)="seleccionarProducto(producto)"class="boton-editar" >Editar</button>
                 <button data-bs-toggle="modal" data-bs-target="#miModal"
                 (click)="seleccionarProducto(producto)"class="boton-editar" >Editar</button>
             </li>
@@ -89,6 +93,11 @@
                 <button (click)="editarProducto()" type="button" class="boton-guardar" data-bs-dismiss="modal">Guardar datos</button>
             </div>
         </div>
-    </div> (
+    </div> 
 </div>
+
+
+
+
+
 
