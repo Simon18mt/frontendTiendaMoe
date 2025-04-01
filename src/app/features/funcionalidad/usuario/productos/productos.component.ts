@@ -276,20 +276,26 @@ restarProducto(producto: productoData) {
   }
   
 
-  eliminarDelCarrito(){
+  eliminarDelCarrito(idCarrito:string){
     if (!this.idUser) {
       console.error("ID de usuario no disponible.");
       return;
     }
-    if (!this.idCarrito) {
-      console.error("productosCarritoListos de usuario no disponible.");
+
+    if (!idCarrito) {
+      console.error("El ID es inválido");
       return;
     }
-
-    this.carritoService.eliminarCarrito(this.idUser, this.idCarrito ).subscribe(
+    this.carritoService.eliminarCarrito(this.idUser, idCarrito ).subscribe(
       (response)=>{
         console.log("Producto eliminado con éxito:", response);
         this.traerCarrito();
+              Swal.fire({
+                title: 'Eliminacion exitosa',
+                text: '¡Has eliminado el producto correctamente!',
+                icon: 'success',
+                showConfirmButton: true,
+              }) 
       }
     )
   }
