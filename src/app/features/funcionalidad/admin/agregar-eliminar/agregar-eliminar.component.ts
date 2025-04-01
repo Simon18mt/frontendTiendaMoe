@@ -101,7 +101,7 @@ private noWhitespaceValidator(
         text: '¡Has guardado el producto correctamente!',
         icon: 'success',
         showConfirmButton: true,
-      }) 
+      }), this.myForm.reset()
 
           }
         )

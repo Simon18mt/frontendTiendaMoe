@@ -1,6 +1,6 @@
 <div class="contenedor">
     <h1 class="titulo">Carrito de compras</h1>
-    <button data-bs-toggle="modal" data-bs-target="#miModal" class="boton-carrito">CARRITO</button>
+    <button data-bs-toggle="modal" data-bs-target="#miModal" class="boton-carrito">MY CARRITO</button>
 
     <div class="cuadro-busqueda">
         <ul class="lista-resultados">
@@ -36,7 +36,7 @@
                             <span class="producto-nombre">{{ carrito.username }}</span>
                             <span class="producto-precio">Unidad: ${{ carrito.precio }}</span>
                             <span class="producto-cantidad">Cantidad: {{ carrito.cantidad }}</span>
-                            <span class="producto-cantidad">Total: {{carrito.precio * carrito.cantidad}}</span>
+                            <span class="producto-cantidad">SubTotal: {{carrito.precio * carrito.cantidad}}</span>
                       
                             <div>
                                 <button (click)="agregarProductoAlCarrito(carrito)" class="boton-sumar">+</button>
