@@ -43,6 +43,7 @@
                       <div class="form-group">
                         <label for="username" class="form-label">Nombre del producto:</label>
                         <input
+                          (keyup.enter)="agregarProducto()"
                           id="username"
                           formControlName="username"
                           type="text"
@@ -64,6 +65,7 @@
                       <div class="form-group">
                         <label for="precio" class="form-label">Precio del producto:</label>
                         <input
+                          (keyup.enter)="agregarProducto()"
                           id="precio"
                           formControlName="precio"
                           type="number"
@@ -86,6 +88,7 @@
                       <div class="form-group">
                         <label for="cantidad" class="form-label">Cantidad del producto:</label>
                         <input
+                          (keyup.enter)="agregarProducto()"
                           id="cantidad"
                           formControlName="cantidad"
                           type="number"
@@ -143,6 +146,7 @@
                       <div class="form-group">
                           <label for="nombreEdit" class="form-label">Nombre:</label>
                           <input
+                              (keyup.enter)="editarProducto()"
                               id="nombreEdit"
                               formControlName="nombreEdit"
                               type="text"
@@ -159,6 +163,7 @@
                       <div class="form-group">
                           <label for="precio" class="form-label">Precio:</label>
                           <input
+                              (keyup.enter)="editarProducto()"
                               id="precio"
                               formControlName="precio"
                               type="number"
@@ -175,6 +180,7 @@
                       <div class="form-group">
                           <label for="cantidad" class="form-label">Cantidad:</label>
                           <input
+                              (keyup.enter)="editarProducto()"
                               id="cantidad"
                               formControlName="cantidad"
                               type="number"

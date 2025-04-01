@@ -295,7 +295,7 @@ restarProducto(producto: productoData) {
                 text: '¡Has eliminado el producto correctamente!',
                 icon: 'success',
                 showConfirmButton: true,
-              }) 
+              }); 
       }
     )
   }
@@ -341,33 +341,61 @@ restarProducto(producto: productoData) {
 
 
     generarFactura() {
-      const doc = new jsPDF();
+
+      const cantiad = this.productosCarritoListos.length;
+
+      if (cantiad >= 1){
+        const doc = new jsPDF();
     
-      // Agregar título
-      doc.setFontSize(18);
-      doc.text('Factura de Compra', 70, 10);
-    
-      // Definir columnas y filas
-      const columnas = ['Producto', 'Precio', 'Cantidad', 'Subtotal'];
-      const filas = this.productosCarritoListos.map(producto => [
-        producto.username,
-        `$${producto.precio}`,
-        producto.cantidad,
-        `$${(producto.precio * producto.cantidad).toFixed(2)}`
-      ]);
-    
-      // Agregar tabla
-      autoTable(doc, {
-        head: [columnas],
-        body: filas,
-        startY: 20
-      });
-    
-      // Agregar total
-      doc.text(`Total: $${this.getTotalCarrito().toFixed(2)}`, 140, doc.internal.pageSize.height - 20);
-    
-      // Descargar PDF
-      doc.save('factura.pdf');
+        // Agregar título
+        doc.setFontSize(18);
+        doc.text('Factura de Compra', 70, 10);
+      
+        // Definir columnas y filas
+        const columnas = ['Producto', 'Precio', 'Cantidad', 'Subtotal'];
+        const filas = this.productosCarritoListos.map(producto => [
+          producto.username,
+          `$${producto.precio}`,
+          producto.cantidad,
+          `$${(producto.precio * producto.cantidad).toFixed(2)}`
+        ]);
+      
+        // Agregar tabla
+        autoTable(doc, {
+          head: [columnas],
+          body: filas,
+          startY: 20
+        });
+      
+        // Agregar total
+        doc.text(`Total: $${this.getTotalCarrito().toFixed(2)}`, 140, doc.internal.pageSize.height - 20);
+      
+        // Descargar PDF
+        doc.save('factura.pdf');
+
+              Swal.fire({
+                title: 'Se genero la factura con exito',
+                text: '¡Tu factura a sido generada correctamente!',
+                icon: 'success',
+                showConfirmButton: true,
+              }) 
+      }else{
+        console.log("ERROR, NO HAY PRODUCTOS");
+              Swal.fire({
+                title: 'NO HAY PRODUCTOS',
+                text: '¡Faltan productos en el carrito!',
+                icon: 'error',
+                showConfirmButton: true,
+              });
+        
+      }
+
+    }
+
+    cantidadProductos(){
+      const cantiad = this.productosCarritoListos.length;
+      console.log("Cantidad: ",cantiad);
+      
     }
 
 }

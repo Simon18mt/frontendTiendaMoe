@@ -123,6 +123,12 @@ private noWhitespaceValidator(
         (response)=>{
           console.log(response.message);
           this.productosListos = this.productosListos.filter(p => p._id !== idProducto);
+              Swal.fire({
+                title: 'Eliminacion exitosa',
+                text: '¡Has eliminado el producto correctamente!',
+                icon: 'success',
+                showConfirmButton: true,
+              }); 
         },
         (error) => {
           console.error("Error al eliminar producto:", error);
