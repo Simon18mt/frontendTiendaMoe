@@ -23,14 +23,14 @@
 /* Cuadro de búsqueda con scroll */
 .cuadro-busqueda {
     width: 100%;
-    max-width: 700px;
-    max-height: 300px; /* Altura máxima antes de hacer scroll */
-    padding: 15px;
+    max-width: 900px;
+    height: 70vh;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Activa el scroll cuando sea necesario */
+    overflow-y: auto;
 }
 
 /* Lista de productos */
@@ -52,6 +52,21 @@
     border-left: 5px solid #4caf50;
     width: 100%;
 }
+
+.producto-nombre, .producto-precio, .producto-cantidad {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .producto-nombre {
+    flex: 2;
+  }
+  
+  .producto-precio, .producto-cantidad {
+    flex: 1;
+    text-align: center;
+  }
 
 /* Estilos del botón "Carrito" */
 .boton-carrito {
@@ -116,18 +131,21 @@
     max-width: 850px; /* Ajusta el ancho según sea necesario */
     width: 90%; /* O usa un porcentaje si quieres que se adapte */
 }
+.modal-body{
+    width: 100%;
+}
 
 /* Cuadro de búsqueda con scroll */
 .cuadro-busqueda-modal {
     width: 100%;
-    max-width: 800px;
-    max-height: 300px; /* Altura máxima antes de hacer scroll */
-    padding: 15px;
+    max-width: 1000px;
+    height: 55vh;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Activa el scroll cuando sea necesario */
+    overflow-y: auto;
 }
 
 .modal-footer {
@@ -140,5 +158,22 @@
 .btn-secondary{
     margin: 5px;
 } 
+
+.modal-content{
+    position: relative;
+    display: flex
+;
+    flex-direction: column;
+    width: 125%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+ 
 
  
